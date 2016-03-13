@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">UAC Android</string>
     <string name="crash_toast">Leider ist die UAC App abgestürzt, ein Absturzbericht wird gesendet</string>
+    <string name="title_activity_main">UAC</string>
+    <!--UI -->
+    <string name="syncbits">Syncbits</string>
+    <string name="low_freq">low frequency</string>
+    <string name="high_freq">high frequency</string>
+    <string name="switch_bits">interpret as bits</string>
+    <string name="send">send</string>
+    <string name="send_rand">random text</string>
+    <string name="text">text to send:</string>
+    <string name="perperbit">periods per bit</string>
 </resources>
