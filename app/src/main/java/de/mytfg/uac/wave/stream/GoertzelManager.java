@@ -87,7 +87,12 @@ public class GoertzelManager {
   
   public GoertzelParallelized getGoertzel(int frequency, int offset) {
     ArrayList<GoertzelParallelized> list = goertzels[offset];
-    GoertzelParallelized g = list.stream().filter((goertzel) -> goertzel.getFrequency() == frequency).findFirst().get();
+    GoertzelParallelized g = null;
+    for (GoertzelParallelized goertzel : list) {
+      if (goertzel.getFrequency() == frequency) {
+        g = goertzel;
+      }
+    }
     return g;
   }
 
