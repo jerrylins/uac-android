@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">UAC Android</string>
     <string name="crash_toast">Leider ist die UAC App abgestürzt, ein Absturzbericht wird gesendet</string>
+    <string name="title_activity_main">UAC</string>
 </resources>
