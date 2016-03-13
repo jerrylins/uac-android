@@ -33,7 +33,8 @@
             <EditText
                 android:id="@+id/editTxt_syncbits"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -51,7 +52,8 @@
             <EditText
                 android:id="@+id/editTxt_perperbit"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
 
         </LinearLayout>
 
