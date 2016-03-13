@@ -8,6 +8,7 @@
     <string name="high_freq">high frequency</string>
     <string name="switch_bits">interpret as bits</string>
     <string name="send">send</string>
-    <string name="send_rand">send random text</string>
+    <string name="send_rand">random text</string>
     <string name="text">text to send:</string>
+    <string name="perperbit">periods per bit</string>
 </resources>
