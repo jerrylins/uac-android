@@ -34,7 +34,7 @@ public class OutputWaveAndroid extends OutputWave {
             Toast.LENGTH_LONG).show();
 
     track = new AudioTrack(
-            AudioManager.STREAM_DTMF,
+            AudioManager.STREAM_MUSIC,
             samplingRate,
             AudioFormat.CHANNEL_OUT_MONO,
             AudioFormat.ENCODING_PCM_FLOAT,
