@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 randomTxt = ByteUtil.toBitString(randomBytes);
                 // set text
                 editTxt_text.setText(randomTxt);
+                // set interprete as bits switch checked
+                switch_isBit.setChecked(true);
             }
 
         });
