@@ -12,11 +12,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
 
+import java.util.Random;
+
+import de.mytfg.uac.util.ByteUtil;
+
 public class MainActivity extends AppCompatActivity {
 
     Context context;
 
     private Button sendButton;
+    private Button randomButton;
     private EditText editTxt_perperbit;
     private EditText editTxt_syncbits;
     private EditText editTxt_lowFreq;
@@ -53,8 +58,30 @@ public class MainActivity extends AppCompatActivity {
 
     public void addBtnListeners() {
 
-        // send button
+        // initialize buttons
         sendButton = (Button) findViewById(R.id.btn_send);
+        randomButton = (Button) findViewById(R.id.btn_rand);
+
+        // random text button
+        randomButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                String randomTxt;
+                byte[] randomBytes = new byte[2];
+                // generate random bytes
+                new Random().nextBytes(randomBytes);
+                randomTxt = ByteUtil.toBitString(randomBytes);
+                // set text
+                editTxt_text.setText(randomTxt);
+                // set interprete as bits switch checked
+                switch_isBit.setChecked(true);
+            }
+
+        });
+
+
+        // send button
         sendButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -80,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 sendingIntent.putExtra("text", text);
                 sendingIntent.putExtra("isBitSequence",isBitSequence);
                 sendingIntent.putExtra("sendStartByte",sendStartByte);
+                sendingIntent.putExtra("isBitSequence", isBitSequence);
                 context.startService(sendingIntent);
             }
 
