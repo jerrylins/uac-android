@@ -2,6 +2,7 @@
     <string name="app_name">UAC Android</string>
     <string name="crash_toast">Leider ist die UAC App abgestürzt, ein Absturzbericht wird gesendet</string>
     <string name="title_activity_main">UAC</string>
+    <string name="title_activity_info">Info</string>
     <!--UI -->
     <string name="syncbits">Syncbits</string>
     <string name="low_freq">low frequency</string>
@@ -11,4 +12,45 @@
     <string name="send_rand">random text</string>
     <string name="text">text to send:</string>
     <string name="perperbit">periods per bit</string>
+    <!-- Info Activity -->
+    <string name="info_text_headline">Über das Projekt</string>
+    <string name="info_text">Ziel war es mit unserem Projekt zu überprüfen, ob in Echtzeit digitale
+        Signale akustisch übertragen werden können. Dies ist uns während des letzten
+        halben Jahres in Wasser und Luft gelungen - versuchsweise erzielten wir mit
+        unserem Equipment Reichweiten von 3 Metern und Fehlerraten von 4%. Da
+        wir uns das erste mal mit digitaler Signalverarbeitung beschäftigt haben, war
+        neben der Entwicklung der Anwendungssoftware das Verstehen der Materie
+        eine der größten Herausforderungen. Anhand von Versuchen haben wir durch
+        empirisches Arbeiten eine Annäherung an das Gebiet gewagt und versucht, uns
+        mathematische Abläufe selbst verständlich zu machen. In einem Jahr haben
+        wir letztendlich ca. 2500 Zeilen funktionalen Code geschrieben und durch den
+        Görtzel-Algorithmus und verschiedene andere Methoden ein Programm ent-
+        wickelt, dass jede Form von digitalen Informationen mit Schall übertragen
+        kann. Dieses Programm wird nach dem Wettbewerb als Bibliothek kostenlos
+        online gestellt, sodass Entwickler von unserer Arbeit profitieren können, ohne
+        die theoretischen Überlegungen unseres Projekts nachvollziehen zu müssen.
+    </string>
+    <string name="info_license_headline">Lizenz</string>
+    <string name="info_version_headline">Version</string>
+    <string name="info_license">UAC App:
+        <a href="http://www.gnu.de/documents/gpl.de.html">GPL v3 Lizenz</a>
+        \nUAC Library: {TODO!!}
+        \nLogo ©  Emile Hansmaennel
+    </string>
+    <string name="info_authors_headline">Autoren der App</string>
+    <string name="info_authors">Leonard Rapp \nRaphael Lehmann</string>
+    <string name="info_jufo_headline">Jugend forscht</string>
+    <string name="info_jufo">Das UAC - Projekt von Tilman Hoffbauer, Konstantin Bosbach und Steffen
+        Ritsche ist im Rahmen eines Jugend forscht Projekts am
+        Theodor-Fliedner-Gymnasium Düsseldorf entstanden.
+        \nEs hat im Rahmen des Regionalwettbewerbs 2016 den 1. Preis der Kategorie
+        Mathematik / Informatik, sowie den Sonderpreis der DGfzP gewonnen.
+    </string>
+    <string name="info_contact_headline">Kontakt</string>
+    <string name="info_contact">Homepage: <a href="https://jufo.mytfg.de">jufo.mytfg.de</a>
+        \nMail: jufo2@mytfg.de
+    </string>
+    <!-- menu strings -->
+    <string name="action_MainActivity">Home</string>
+    <string name="action_InfoActivity">Informationen</string>
 </resources>
