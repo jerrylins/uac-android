@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 boolean isBitSequence = switch_isBit.isChecked();
                 String text = editTxt_text.getText().toString();
                 // set fixed values
-                UacApplication.signalConfig.put("samplingrate", 48000);
+                UacApplication.signalConfig.put("samplingrate", 5000);
                 UacApplication.signalConfig.put("modulation", "fm");
                 // set UI values to config
                 UacApplication.signalConfig.put("periodsperbit", periodsperbit);
