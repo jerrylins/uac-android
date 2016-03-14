@@ -7,6 +7,8 @@ import org.acra.ReportingInteractionMode;
 import org.acra.annotation.ReportsCrashes;
 import org.acra.sender.HttpSender;
 
+import de.mytfg.uac.signal.SignalConfig;
+
 
 @ReportsCrashes(
         httpMethod = HttpSender.Method.PUT,
@@ -20,10 +22,14 @@ import org.acra.sender.HttpSender;
 )
 
 public class UacApplication extends Application {
+    public static SignalConfig signalConfig;
 
     @Override
     public void onCreate() {
         super.onCreate();
+
+        // create signal config
+        signalConfig = new SignalConfig();
 
         // Initialise ACRA:
         ACRA.init(this);

@@ -33,7 +33,9 @@
             <EditText
                 android:id="@+id/editTxt_syncbits"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="10011001110011010110000111001100"/>
 
         </LinearLayout>
 
@@ -51,7 +53,9 @@
             <EditText
                 android:id="@+id/editTxt_perperbit"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="5"/>
 
         </LinearLayout>
 
@@ -76,7 +80,8 @@
                 android:id="@+id/editTxt_lowFreq"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:text="250"/>
 
         </LinearLayout>
         <LinearLayout
@@ -92,7 +97,8 @@
                 android:id="@+id/editTxt_highFreq"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:text="350"/>
 
         </LinearLayout>
 
@@ -120,7 +126,8 @@
     <EditText
         android:id="@+id/editTxt_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Hello world!"/>
 
     <LinearLayout
         android:layout_width="match_parent"
