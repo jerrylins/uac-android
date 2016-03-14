@@ -51,6 +51,7 @@ public class AudioService extends IntentService {
         Log.d(TAG, "dataString=" + dataString);
 
         Boolean isBitSequence = intent.getBooleanExtra("isBitSequence", false);
+        Boolean sendStartByte = intent.getBooleanExtra("sendStartByte", false);
         // Do work here, based on the contents of dataString
         OutputWaveAndroid outAndroid = new OutputWaveAndroid(config.getInt("samplingrate"), this);
         SignalOutputStream outSignal = new SignalOutputStream(outAndroid, config);
@@ -59,7 +60,9 @@ public class AudioService extends IntentService {
         try {
             outSignal.synchronize();
             if (!isBitSequence) {
-                out.write(START_BYTE);
+                if (sendStartByte) {
+                    out.write(START_BYTE);
+                }
                 out.writeUTF(dataString);
             }
             else {

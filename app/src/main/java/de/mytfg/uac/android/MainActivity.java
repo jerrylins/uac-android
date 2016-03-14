@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTxt_highFreq;
     private EditText editTxt_text;
     private Switch switch_isBit;
+    private Switch switch_sendStartByte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         editTxt_highFreq = (EditText)findViewById(R.id.editTxt_highFreq);
         editTxt_text = (EditText)findViewById(R.id.editTxt_text);
         switch_isBit = (Switch)findViewById(R.id.switch_bits);
+        switch_sendStartByte = (Switch)findViewById(R.id.switch_sendStartByte);
     }
 
 
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 int lowFreq = Integer.parseInt(editTxt_lowFreq.getText().toString());
                 int highFreq = Integer.parseInt(editTxt_highFreq.getText().toString());
                 boolean isBitSequence = switch_isBit.isChecked();
+                boolean sendStartByte = switch_sendStartByte.isChecked();
                 String text = editTxt_text.getText().toString();
                 // set fixed values
                 UacApplication.signalConfig.put("samplingrate", 5000);
@@ -76,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent sendingIntent = new Intent(context, AudioService.class);
                 sendingIntent.putExtra("text", text);
                 sendingIntent.putExtra("isBitSequence",isBitSequence);
+                sendingIntent.putExtra("sendStartByte",sendStartByte);
                 context.startService(sendingIntent);
             }
 

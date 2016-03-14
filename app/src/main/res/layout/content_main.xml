@@ -116,6 +116,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/switch_bits"/>
+        <Switch
+            android:id="@+id/switch_sendStartByte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/switch_sendStartByte" />
     </LinearLayout>
 
     <TextView
