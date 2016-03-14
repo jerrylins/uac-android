@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        context = getApplicationContext();
+        context = this;
 
         initializeUI();
 
@@ -57,13 +57,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View arg0) {
                 // read values from UI
                 int periodsperbit = Integer.parseInt(editTxt_perperbit.getText().toString());
-                int syncbits = Integer.parseInt(editTxt_syncbits.getText().toString());
+                String syncbits = editTxt_syncbits.getText().toString();
                 int lowFreq = Integer.parseInt(editTxt_lowFreq.getText().toString());
                 int highFreq = Integer.parseInt(editTxt_highFreq.getText().toString());
                 boolean isBitSequence = switch_isBit.isChecked();
                 String text = editTxt_text.getText().toString();
                 // set fixed values
-                UacApplication.signalConfig.put("samplingrate", 2500);
+                UacApplication.signalConfig.put("samplingrate", 48000);
                 UacApplication.signalConfig.put("modulation", "fm");
                 // set UI values to config
                 UacApplication.signalConfig.put("periodsperbit", periodsperbit);
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 UacApplication.signalConfig.put("frequency.low", lowFreq);
                 UacApplication.signalConfig.put("frequency.high", highFreq);
                 // create and start sending intent
-                Intent sendingIntent = new Intent(context, null);
+                Intent sendingIntent = new Intent(context, AudioService.class);
                 sendingIntent.putExtra("text", text);
                 sendingIntent.putExtra("isBitSequence",isBitSequence);
                 context.startService(sendingIntent);
