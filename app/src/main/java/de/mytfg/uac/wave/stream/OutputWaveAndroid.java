@@ -13,11 +13,11 @@ import de.mytfg.uac.util.AverageTimer;
 public class OutputWaveAndroid extends OutputWave {
   private Context context;
 
-  private static final int BUFFER_SIZE = 1;
+  private static final int BUFFER_SIZE = 16;
 
   //private SourceDataLine line;
   private AudioTrack track;
-  private float[] samples;
+  private short[] samples;
   int pointer = 0;
 
   public OutputWaveAndroid(int samplingRate, Context context) {
@@ -37,7 +37,7 @@ public class OutputWaveAndroid extends OutputWave {
             AudioManager.STREAM_MUSIC,
             samplingRate,
             AudioFormat.CHANNEL_OUT_MONO,
-            AudioFormat.ENCODING_PCM_FLOAT,
+            AudioFormat.ENCODING_PCM_16BIT,
             bufferSize,
             AudioTrack.MODE_STREAM
     );
@@ -45,13 +45,13 @@ public class OutputWaveAndroid extends OutputWave {
     track.setVolume(AudioTrack.getMaxVolume());
     track.play();
 
-    samples = new float[BUFFER_SIZE];
+    samples = new short[BUFFER_SIZE];
   }
 
   @Override
   public void writeSample(double sample) throws IOException {
     AverageTimer.getTimer("Android").begin();
-    samples[pointer] = (float) sample;
+    samples[pointer] = (short) Math.round(Short.MAX_VALUE * sample);
     pointer++;
     if(pointer == BUFFER_SIZE) {
       flush();
@@ -61,7 +61,7 @@ public class OutputWaveAndroid extends OutputWave {
 
   public void flush() {
     AverageTimer.getTimer("Conversion").begin();
-    track.write(samples, 0, samples.length, AudioTrack.WRITE_NON_BLOCKING);
+    track.write(samples, 0, samples.length);
     AverageTimer.getTimer("Conversion").end();
     pointer = 0;
   }
